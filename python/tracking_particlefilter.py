@@ -227,7 +227,7 @@ class TrackingParticleFilter:
 
     # フレームアウト関数
     def frameout(self, id):
-        class_num = 10  # 識別器の出力クラス数
+        class_num = 11  # 識別器の出力クラス数
         copy_id = id[:] # idのコピー
         average = [''] * self.cluster
         # 各クラスタの尤度の平均値を求める
