@@ -1,4 +1,4 @@
-# Multi_target_cnn_particlefilter
+# Multi_targets_cnn_particlefilter
 
 # 実装環境
 - Ubuntu16.04  
