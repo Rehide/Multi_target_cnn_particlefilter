@@ -137,6 +137,7 @@ if __name__ == "__main__":
                         t_filter.W.append([w] * new_t_filter_num)
                         t_filter.H.append([h] * new_t_filter_num)
                         id.append(t_filter.max_id + 1)
+                        ave.append(prob)
                         t_filter.pre_id = id[:]
                         t_filter.max_id += 1
                         t_filter.pre_px = np.array([[x, y, w, h]])
