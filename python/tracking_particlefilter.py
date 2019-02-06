@@ -95,7 +95,8 @@ class TrackingParticleFilter:
             y, x, w, h = self.Y[i], self.X[i], self.W[i], self.H[i]
             roi = image[y:y+h, x:x+w]
             # 領域画像をcaffeのフォーマットに合わせる
-            img = cv2.cvtColor(roi, cv2.COLOR_BGR2RGB)
+            img = cv2.resize(roi, (32,32))
+            img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
             img = skimage.img_as_float(img).astype(np.float32)
             # caffe識別器から対象物体である確率を取得
             predictions = self.classifier.predict([img], oversample=False)
