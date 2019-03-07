@@ -71,7 +71,7 @@ class TrackingParticleFilter:
     # caffeの設定
     def caffe_preparation(self):
         mean_blob = caffe_pb2.BlobProto()
-        with open('../model/crow_mean.binaryproto') as f:
+        with open('../model/model_20190307/crow_mean.binaryproto') as f:
             mean_blob.ParseFromString(f.read())
         mean_array = np.asarray(
         mean_blob.data,
@@ -80,8 +80,8 @@ class TrackingParticleFilter:
         	mean_blob.height,
         	mean_blob.width))
         self.classifier = caffe.Classifier(
-            '../model/crow.prototxt',
-            '../model/crow_iter_100000.caffemodel',
+            '../model/model_20190307/crow.prototxt',
+            '../model/model_20190307/crow_iter_100000.caffemodel',
             mean=mean_array,
             raw_scale=255)
 
